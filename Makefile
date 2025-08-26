@@ -57,6 +57,5 @@ run: ensure-venv
 # Limpa caches e artefatos
 clean:
 	rm -rf .venv .mypy_cache .ruff_cache .pytest_cache dist build coverage.xml htmlcov
-"""
 with open("/mnt/data/Makefile", "w") as f:
-    f.write(content)
+	f.write(content)
