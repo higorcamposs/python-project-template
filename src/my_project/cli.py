@@ -1,7 +1,7 @@
 import os
 
-from dotenv import load_dotenv
 import typer
+from dotenv import load_dotenv
 
 app = typer.Typer(help="CLI do projeto base.")
 load_dotenv()

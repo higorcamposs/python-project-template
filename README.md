@@ -81,12 +81,12 @@ make cov
 
 ### Build da imagem
 ```bash
-docker build -t my-project -f docker/Dockerfile .
+docker build -t my_project -f docker/Dockerfile .
 ```
 
 ### Executar container
 ```bash
-docker run --rm -it my-project
+docker run --rm -it my_project
 ```
 
 ---

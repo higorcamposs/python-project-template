@@ -27,7 +27,7 @@ dev = [
 ]
 
 [project.scripts]
-my-project = "my_project.cli:app"
+my_project = "my_project.cli:app"
 
 # Ruff configuration (nova sintaxe)
 [tool.ruff]
