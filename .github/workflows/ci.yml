@@ -1,4 +1,4 @@
-name: CI (lint)
+name: CI
 
 on:
   push:
@@ -23,7 +23,6 @@ concurrency:
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -38,9 +37,18 @@ jobs:
           python -m pip install -U pip
           pip install -e .[dev]
 
-      - name: Run Ruff + Black + Mypy
+      - name: Ruff + Black + Mypy
         run: |
           ruff check .
           ruff format --check .
           black --check .
           mypy src/
+
+      - name: pre-commit (se configurado)
+        run: |
+          if [ -f ".pre-commit-config.yaml" ]; then
+            pip install pre-commit
+            pre-commit run -a
+          else
+            echo "Sem .pre-commit-config.yaml — passo ignorado."
+          fi
