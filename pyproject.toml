@@ -53,3 +53,14 @@ ignore_missing_imports = true
 [tool.coverage.run]
 branch = true
 source = ["src/my_project"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/my_project"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/my_project",
+  "pyproject.toml",
+  "README.md",
+  "LICENSE"
+]
