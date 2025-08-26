@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "python-project-template"
 version = "0.1.0"
-description = "Template moderno para projetos Python com src layout, testes, Docker e CI."
+description = "Template em Python para iniciar novos projetos com estrutura organizada, testes, Docker e CI/CD."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
@@ -29,11 +29,14 @@ dev = [
 [project.scripts]
 my-project = "my_project.cli:app"
 
+# Ruff configuration (nova sintaxe)
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-extend-select = ["I"]
 exclude = ["docs", "build", "dist"]
+
+[tool.ruff.lint]
+extend-select = ["I"]
 
 [tool.black]
 line-length = 100

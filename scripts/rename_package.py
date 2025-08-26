@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
-import sys
 import pathlib
+import sys
+
 
 def rename_package(old: str, new: str):
     root = pathlib.Path(__file__).resolve().parents[1]
@@ -12,16 +13,24 @@ def rename_package(old: str, new: str):
     if old_path.exists():
         os.rename(old_path, new_path)
 
-    # Percorre arquivos e substitui referências
+    # Substitui referências nos arquivos
     for p in root.rglob("*"):
         if p.is_file() and p.suffix in {".py", ".toml", ".md", ".yml", ".yaml", ""}:
             try:
                 txt = p.read_text(encoding="utf-8")
             except Exception:
                 continue
-            if old in txt:
-                txt = txt.replace(old, new)
-                p.write_text(txt, encoding="utf-8")
+            changed = txt.replace(old, new)
+            if changed != txt:
+                p.write_text(changed, encoding="utf-8")
+
+    # Atualiza pyproject.toml (packages e coverage)
+    pyproj = root / "pyproject.toml"
+    if pyproj.exists():
+        txt = pyproj.read_text(encoding="utf-8")
+        txt = txt.replace(f'packages = ["src/{old}"]', f'packages = ["src/{new}"]')
+        txt = txt.replace(f'source = ["src/{old}"]', f'source = ["src/{new}"]')
+        pyproj.write_text(txt, encoding="utf-8")
 
     print(f"✅ Pacote renomeado: {old} -> {new}")
 

@@ -1,7 +1,9 @@
 from typer.testing import CliRunner
+
 from my_project.cli import app
 
 runner = CliRunner()
+
 
 def test_hello_default():
     result = runner.invoke(app, ["hello"])
