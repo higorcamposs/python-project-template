@@ -4,7 +4,7 @@
 
 # 🐍 Python Project Template
 
-Um template moderno para iniciar projetos em **Python**, seguindo boas práticas da comunidade.  
+Um template moderno para iniciar projetos em **Python**, seguindo boas práticas da comunidade.
 Inclui estrutura organizada com **src layout**, testes automatizados, Docker, Makefile, scripts de bootstrap, documentação e CI/CD.
 
 ---
@@ -93,36 +93,36 @@ docker run --rm -it my_project
 
 ## ⚙️ Makefile (atalhos úteis)
 
-- `make install` → Instala dependências  
-- `make lint` → Verifica qualidade do código (Ruff, Black, Mypy)  
-- `make format` → Formata o código  
-- `make test` → Roda os testes  
-- `make cov` → Roda testes com cobertura  
-- `make run` → Executa a aplicação  
+- `make install` → Instala dependências
+- `make lint` → Verifica qualidade do código (Ruff, Black, Mypy)
+- `make format` → Formata o código
+- `make test` → Roda os testes
+- `make cov` → Roda testes com cobertura
+- `make run` → Executa a aplicação
 
 ---
 
 ## 📖 Documentação
 
-A documentação pode ser expandida no diretório `docs/`.  
+A documentação pode ser expandida no diretório `docs/`.
 Sugestão: usar [MkDocs](https://www.mkdocs.org/) com tema [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
 ---
 
 ## 🤝 Contribuindo
 
-Contribuições são bem-vindas!  
+Contribuições são bem-vindas!
 Consulte o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para saber como contribuir.
 
 ---
 
 ## 📌 Roadmap (sugestão)
 
-- [ ] Adicionar `pyproject.toml` com dependências base  
-- [ ] Configurar `pre-commit` (Ruff, Black, Mypy)  
-- [ ] Adicionar GitHub Actions/GitLab CI  
-- [ ] Adicionar exemplos de testes unitários e integração  
-- [ ] Publicar documentação com MkDocs  
+- [ ] Adicionar `pyproject.toml` com dependências base
+- [ ] Configurar `pre-commit` (Ruff, Black, Mypy)
+- [ ] Adicionar GitHub Actions/GitLab CI
+- [ ] Adicionar exemplos de testes unitários e integração
+- [ ] Publicar documentação com MkDocs
 
 ---
 

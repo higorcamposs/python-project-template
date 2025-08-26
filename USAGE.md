@@ -55,16 +55,16 @@ docker run --rm -it -p 8000:8000 nome-do-projeto
 
 ## 📌 Checklist inicial
 
-- [ ] Editar `pyproject.toml` → `[project] name` e `[project.scripts]`  
-- [ ] Ajustar `Makefile` (`make run`) para o novo nome  
-- [ ] Criar `.env` a partir de `.env.example`  
-- [ ] Atualizar `README.md` com descrição do novo projeto  
+- [ ] Editar `pyproject.toml` → `[project] name` e `[project.scripts]`
+- [ ] Ajustar `Makefile` (`make run`) para o novo nome
+- [ ] Criar `.env` a partir de `.env.example`
+- [ ] Atualizar `README.md` com descrição do novo projeto
 - [ ] Subir o repositório e verificar se o CI passou
 
 ---
 
 ## 💡 Dicas
 
-- Use `make init name=novo_nome` (se configurado) para automatizar a inicialização.  
-- Sempre rode `make lint && make test` antes de commitar.  
-- Para contribuir, siga as orientações em [CONTRIBUTING.md](CONTRIBUTING.md).  
+- Use `make init name=novo_nome` (se configurado) para automatizar a inicialização.
+- Sempre rode `make lint && make test` antes de commitar.
+- Para contribuir, siga as orientações em [CONTRIBUTING.md](CONTRIBUTING.md).
