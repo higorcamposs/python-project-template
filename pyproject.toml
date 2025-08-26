@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-project-template"
+version = "0.1.0"
+description = "Template moderno para projetos Python com src layout, testes, Docker e CI."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Higor Campos" }]
+
+dependencies = [
+  "typer>=0.12",
+  "python-dotenv>=1.0",
+  "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.6",
+  "black>=24.8",
+  "mypy>=1.10",
+  "types-python-dotenv",
+]
+
+[project.scripts]
+my-project = "my_project.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-select = ["I"]
+exclude = ["docs", "build", "dist"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+warn_unused_ignores = true
+ignore_missing_imports = true
+
+[tool.coverage.run]
+branch = true
+source = ["src/my_project"]
